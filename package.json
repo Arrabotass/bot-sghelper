@@ -1,0 +1,19 @@
+{
+  "name": "sghelper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mysql": "^2.18.1",
+    "node-telegram-bot-api": "^0.56.0",
+    "nodemon": "^2.0.20"
+  }
+}
