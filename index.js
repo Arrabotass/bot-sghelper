@@ -109,7 +109,7 @@ pool.getConnection(function(err, connection) {
 
             if (data === '231') {
                 await 
-                connection.query("SELECT * FROM timetable WHERE `id`BETWEEN 4 AND 6", (err, results) =>{
+                pool.query("SELECT * FROM timetable WHERE `id`BETWEEN 4 AND 6", (err, results) =>{
 
                     if (err) console.log(err);
                     
@@ -356,28 +356,58 @@ pool.getConnection(function(err, connection) {
             }
     
             if (data === '322') {
-                await bot.sendMessage(chatID, `ПУНКТ ПРОКАТА - НИЖЕ ТЕСТОВАЯ ИНФОРМАЦИЯ
-                `)
+                await 
+                pool.query("SELECT `name_main`, `text`, `time`, `days` FROM `service` WHERE `id`=2", (err, results) =>{
+
+                    if (err) console.log(err)
+                    else bot.sendMessage(chatID, 
+                `${results[0].name_main}\n\n${results[0].text}\n\nВремя работы: ${results[0].time}\n\nДни работы: ${results[0].days}
+                `,engineerOptions96)
+                });
             }
     
             if (data === '323') {
-                await bot.sendMessage(chatID, `УСЛУГИ ПРАЧЕЧНОЙ - НИЖЕ ТЕСТОВАЯ ИНФОРМАЦИЯ
-                `)
+                await 
+                pool.query("SELECT `name_main`, `text`, `time`, `days` FROM `service` WHERE `id`=3", (err, results) =>{
+
+                    if (err) console.log(err)
+                    else bot.sendMessage(chatID, 
+                `${results[0].name_main}\n\n${results[0].text}\n\nВремя работы: ${results[0].time}\n\nДни работы: ${results[0].days}
+                `,engineerOptions96)
+                });
             }
     
             if (data === '324') {
-                await bot.sendMessage(chatID, `БАННЫЙ КОМПЛЕКС - НИЖЕ ТЕСТОВАЯ ИНФОРМАЦИЯ
-                `)
+                await 
+                pool.query("SELECT `name_main`, `text`, `time`, `days` FROM `service` WHERE `id`=5", (err, results) =>{
+
+                    if (err) console.log(err)
+                    else bot.sendMessage(chatID, 
+                `${results[0].name_main}\n\n${results[0].text}\n\nВремя работы: ${results[0].time}\n\nДни работы: ${results[0].days}
+                `,engineerOptions96)
+                });
             }
 
             if (data === '325') {
-                await bot.sendMessage(chatID, `БАННЫЙ КОМПЛЕКС - НИЖЕ ТЕСТОВАЯ ИНФОРМАЦИЯ
-                `)
+                await 
+                pool.query("SELECT `name_main`, `text`, `time`, `days` FROM `service` WHERE `id`=6", (err, results) =>{
+
+                    if (err) console.log(err)
+                    else bot.sendMessage(chatID, 
+                `${results[0].name_main}\n\n${results[0].text}\n\nВремя работы: ${results[0].time}\n\nДни работы: ${results[0].days}
+                `,engineerOptions96)
+                });
             }
 
             if (data === '326') {
-                await bot.sendMessage(chatID, `БАННЫЙ КОМПЛЕКС - НИЖЕ ТЕСТОВАЯ ИНФОРМАЦИЯ
-                `)
+                await 
+                pool.query("SELECT `name_main`, `text`, `time`, `days` FROM `service` WHERE `id`=7", (err, results) =>{
+
+                    if (err) console.log(err)
+                    else bot.sendMessage(chatID, 
+                `${results[0].name_main}\n\n${results[0].text}\n\nВремя работы: ${results[0].time}\n\nДни работы: ${results[0].days}
+                `,engineerOptions96)
+                });
             }
 
             return 

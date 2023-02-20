@@ -96,9 +96,9 @@ module.exports = {
       engineerOptions22: {
         reply_markup: JSON.stringify({
           inline_keyboard: [
-            [{text: 'САЛОН КРАСОТЫ', callback_data: '321'}, {text: 'ПУНКТ ПРОКАТА', callback_data: '322'}], 
-            [{text: 'УСЛУГИ ПРАЧЕЧНОЙ', callback_data: '323'}, {text: 'БАННЫЙ КОМПЛЕКС', callback_data: '324'}], 
-            [{text: 'МЕНЮ ПОДУШЕК', callback_data: '325'}, {text: 'БАР', callback_data: '326'}], 
+            [{text: 'САЛОН КРАСОТЫ', callback_data: '321'}, {text: 'УСЛУГИ ПРАЧЕЧНОЙ', callback_data: '322'}], 
+            [{text: 'МЕНЮ ПОДУШЕК', callback_data: '323'}, {text: 'ПУНКТ ПРОКАТА', callback_data: '324'}], 
+            [{text: 'ТЕРМАЛЬНЫЕ КОМПЛЕКСЫ', callback_data: '325'}, {text: 'БАР', callback_data: '326'}], 
 
           ]
         })
