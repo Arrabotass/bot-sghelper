@@ -26,7 +26,8 @@ pool.getConnection(function(err, connection) {
 });
 
     bot.setMyCommands( [
-        {command:'/start', description:'Стартовое меню'}
+        {command:'/start', description:'Стартовое меню'},
+        {command:'/feedback', description:'Обратная связь по боту'}
     ])
 
     bot.on('message', async msg => {
@@ -49,8 +50,20 @@ pool.getConnection(function(err, connection) {
         }
 
         if (text === `/feedback`) {
-            await bot.sendMessage(chatID, `Время работы какой службы Вас интересует?`)
-            return bot.sendMessage(chatID, `/МЕНЮ_ВСТАВИТЬ`)
+            await bot.sendMessage(chatID, `Пожалуйста, оставьте обратную связь в произвольной форме. Для этого напишите ниже текст в свободной форме с описанием Вашей обратной связи и все :) Внимание: для тестового бота возможно оставлять обратную связь только один раз!`).then(bot.on('message', async msg => {
+                var feedbackdevtext = msg.text;
+                pool.query("INSERT INTO `feedbackdev` (`login`, `text`) VALUES ('"+msg.from.first_name+"', '"+feedbackdevtext+"')", function(err, results) {
+                    if (err != null) {console.log(err)
+                    }
+                    if (results) {
+                    bot.sendMessage(chatID, `Спасибо, ${msg.from.first_name}, Ваша обратная связь очень важная для нас!`, engineerOptions999)
+                    console.log(results)
+                    };
+                }
+            )})
+                // }
+                )
+            return 
         }   
 
         if (text === '/time') {

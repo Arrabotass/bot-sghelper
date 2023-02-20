@@ -5,6 +5,7 @@ module.exports = {
           inline_keyboard: [
             [{text: 'МЕДИЦИНА', callback_data: '21'}, {text: 'ПЛАТНЫЕ УСЛУГИ', callback_data: '22'}], 
             [{text: 'ВРЕМЯ РАБОТЫ', callback_data: '23'}, {text: 'ТЕЛЕФОНЫ', callback_data: '24'}], 
+            // [{text: 'ОБРАТНАЯ СВЯЗЬ ПО БОТУ', callback_data: '181818'}],
             // [{text: 'ТЕХНИЧЕСКАЯ ЗАЯВКА', callback_data: '25'}],
           ]
         })
